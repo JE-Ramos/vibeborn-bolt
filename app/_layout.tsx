@@ -10,6 +10,14 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { View, StyleSheet } from 'react-native';
 import { VibeWorldProvider } from '@/contexts/VibeWorldContext';
+import {
+  CrimsonText_400Regular,
+  CrimsonText_700Bold
+} from '@expo-google-fonts/crimson-text';
+import {
+  Cinzel_400Regular,
+  Cinzel_700Bold
+} from '@expo-google-fonts/cinzel';
 
 // Prevent splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -18,8 +26,10 @@ export default function RootLayout() {
   useFrameworkReady();
 
   const [fontsLoaded, fontError] = useFonts({
-    'CaslonAntique': require('@/assets/fonts/CaslonAntique.ttf'),
-    'Supernatural': require('@/assets/fonts/Supernatural.ttf'),
+    'CaslonAntique': CrimsonText_400Regular,
+    'CaslonAntique-Bold': CrimsonText_700Bold,
+    'Supernatural': Cinzel_400Regular,
+    'Supernatural-Bold': Cinzel_700Bold,
   });
 
   // Hide splash screen once fonts are loaded
